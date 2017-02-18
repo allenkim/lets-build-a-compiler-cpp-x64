@@ -14,6 +14,9 @@ extern char Look;
 // Read character from input stream
 void GetChar();
 
+// Convert char to string - not in book, but helpful for us
+string CharToStr(char x);
+
 // Report an error
 void Error(string s);
 // Report an error and halt
