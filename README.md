@@ -5,7 +5,7 @@
 
 This will try to convert the Turbo Pascal code into C++ equivalent, and the assembly into x86-64 equivalent. The assembly will use Intel syntax using the NASM assembler. I tried using AT&T syntax since the GNU assembler (GAS) uses it by default, but it was pretty horrendous looking in my eyes compared to the Intel style...
 
-However, in a 64bit Linux environment, we can now run the generated assembly! With nasm installed, we first run:
+In a 64-bit Linux environment (nasm is cross-compatible, but I haven't tried), we can now run the generated assembly! With nasm installed, we first run:
 ```sh
 nasm -felf64 test.asm
 ```
