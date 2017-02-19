@@ -80,14 +80,14 @@ void Divide() {
   Term();
   EmitLn("mov rbx, rax");
   EmitLn("pop rax");
-  EmitLn("mov rdx, 0");
+  EmitLn("xor rdx, rdx");
   EmitLn("div rbx");
 }
 
 // Parse and translate a math expression
 void Expression() {
   if (IsAddop(Look))
-    EmitLn("mov rax, 0");
+    EmitLn("xor rax, rax");
   else
     Term();
   while (IsAddop(Look)){
