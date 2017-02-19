@@ -7,6 +7,8 @@
 
 using std::string;
 
+bool IsAddop(char c);
+bool IsMulop(char c);
 void Factor();
 void Term();
 void Add();
@@ -14,6 +16,14 @@ void Subtract();
 void Multiply();
 void Divide();
 void Expression();
+
+bool IsAddop(char c) {
+  return string("+-").find(c) != string::npos;
+}
+
+bool IsMulop(char c) {
+  return string("*/").find(c) != string::npos;
+}
 
 void Factor() {
   if (Look == '('){
@@ -28,7 +38,7 @@ void Factor() {
 
 void Term() {
   Factor();
-  while (string("*/").find(Look) != string::npos){
+  while (IsMulop(Look)){
     EmitLn("push rax");
     switch(Look) {
       case '*':
@@ -76,8 +86,11 @@ void Divide() {
 
 // Parse and translate a math expression
 void Expression() {
-  Term();
-  while (string("+-").find(Look) != string::npos){
+  if (IsAddop(Look))
+    EmitLn("mov rax, 0");
+  else
+    Term();
+  while (IsAddop(Look)){
     EmitLn("push rax");
     switch(Look) {
       case '+':
