@@ -16,11 +16,9 @@ void GetChar() {
     Look = getchar();
 }
 
-
-string CharToStr(char x){
+string CharToStr(char x) {
   return string(1,x);
 }
-
 
 void Error(string s) {
     cout << "\nError: " << s << '.' << endl;
@@ -39,7 +37,7 @@ void Match(char x) {
     if (Look == x)
         GetChar();
     else
-        Expected("'" + CharToStr(x) + "'");
+        Expected("'" + string(1,x) + "'");
 }
 
 
@@ -52,17 +50,15 @@ int IsDigit(char c) {
 }
 
 
-char GetName()
-{
+char GetName() {
     if (!IsAlpha(Look))
-        Expected(string("Name"));
+        Expected("Name");
     char c = Look;
     GetChar();
     return std::toupper(c, loc);
 }
 
-char GetNum()
-{
+char GetNum() {
     if (!IsDigit(Look))
         Expected("Integer");
     char c = Look;
@@ -71,18 +67,15 @@ char GetNum()
 }
 
 
-void Emit(string s)
-{
+void Emit(string s) {
     cout << "\t" << s;
 }
 
-void EmitLn(string s)
-{
+void EmitLn(string s) {
     Emit(s);
     cout << endl;
 }
 
-void Init()
-{
+void Init() {
     GetChar();
 }
