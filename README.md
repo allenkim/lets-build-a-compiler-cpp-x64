@@ -13,4 +13,4 @@ where test.asm can be replaced with whatever the assembly file was named. This g
 ```sh
 gcc test.o
 ```
-That's it to get the executable! For many beginning programs though, it doesn't really output anything, but theres stuff going on in the registers. To follow the code, I recommend GDB and using `layout asm` and `stepi` to go through the program.
+That's it to get the executable! For many beginning programs though, it doesn't really output anything, but theres stuff going on in the registers. To follow the code, I recommend GDB and using `layout regs` and `stepi` or `si` to go through the program one line of assembly at a time.
