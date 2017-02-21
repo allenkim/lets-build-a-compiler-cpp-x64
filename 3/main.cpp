@@ -7,8 +7,6 @@
 
 using std::string;
 
-bool IsAddop(char c);
-bool IsMulop(char c);
 void Ident();
 void Factor();
 void Term();
@@ -18,14 +16,6 @@ void Multiply();
 void Divide();
 void Expression();
 void Assignment();
-
-bool IsAddop(char c) {
-  return string("+-").find(c) != string::npos;
-}
-
-bool IsMulop(char c) {
-  return string("*/").find(c) != string::npos;
-}
 
 void Ident() {
   string Name = GetName();

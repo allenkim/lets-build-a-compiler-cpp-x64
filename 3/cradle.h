@@ -26,6 +26,10 @@ void Expected(string s);
 // Match a specific character
 void Match(char x);
 
+// Recognize Add/Minus Operation
+bool IsAddop(char c);
+// Recognize Multiplication/Divide Operation
+bool IsMulop(char c);
 // Recognize an Alpha character
 bool IsAlpha(char c);
 // Recognize a Decimal digit

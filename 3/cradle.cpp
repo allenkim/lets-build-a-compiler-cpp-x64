@@ -45,6 +45,14 @@ void Match(char x) {
 }
 
 
+bool IsAddop(char c) {
+  return string("+-").find(c) != string::npos;
+}
+
+bool IsMulop(char c) {
+  return string("*/").find(c) != string::npos;
+}
+
 bool IsAlpha(char c) {
   return std::isalpha(c, loc);
 }
