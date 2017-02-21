@@ -64,8 +64,6 @@ void Term() {
       case '/':
         Divide();
         break;
-      default:
-        Expected("Mulop");
       }
     }
 }
@@ -116,8 +114,6 @@ void Expression() {
       case '-':
         Subtract();
         break;
-      default:
-        Expected("Addop");
       }
     }
 }
